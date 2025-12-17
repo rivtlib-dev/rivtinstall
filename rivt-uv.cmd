@@ -1,7 +1,7 @@
     @echo on
     REM clear existing project, download rivt-install, create new venv
     REM set rivt folder
-    SET rvfolder=rivt-doc1
+    SET rvfolder=rivt-doc2
     REM go to home directory
     cd %HOMEPATH%
     REM double check deactivation for dev purposes
@@ -14,8 +14,6 @@
     mkdir %rvfolder%
     REM change directory
     cd %rvfolder%
-    REM download rivt install file
-    curl  https://raw.githubusercontent.com/rivt-info/rivt-win-install/refs/heads/main/rivt-install.cmd -O   
     REM make venv
     uv venv
     REM activate venv
@@ -23,9 +21,11 @@
     REM install rivt from GitHub
     uv pip install git+https://github.com/rivtlib-dev/rivtlib
     REM download example project into new folder
-    mkdir example1
-    cd example1
-    curl https://raw.githubusercontent.com/rivt-info/rivt-simple-single-doc/refs/heads/main/rv0000-simple-single-doc.py -O
-    curl https://github.com/rivt-info/rivt-simple-single-doc/blob/main/beam.png?raw=true -O -L
-    REM run example with (no quotes )"python rv0000-simple-single-doc.py"
+    mkdir example2
+    cd example2
+    curl https://raw.githubusercontent.com/rivt-info/rivt-single-doc/refs/heads/main/rv0000-single-doc.py -O
+    curl https://raw.githubusercontent.com/rivt-info/rivt-single-doc/refs/heads/main/s-beam1-v.csv -O
+    curl https://raw.githubusercontent.com/rivt-info/rivt-single-doc/refs/heads/main/s-sectprop.py -O
+    curl https://github.com/rivt-info/rivt-single-doc/blob/main/s-beam.png?raw=true -O -L
+    REM run example with (no quotes )"python rv0000-single-doc.py"
     cmd /k
